@@ -3,7 +3,7 @@
   "version": "0.2.0",
   "description": "Learn while you build: maps, leaf tasks, a debugging hint ladder, and read-only codebase mapping agents for pair coding with Claude.",
   "author": {
-    "name": "ghostpants05"
+    "name": "CroixChadha"
   },
   "license": "MIT",
   "keywords": ["learning", "pair-programming", "mapping", "debugging", "onboarding"]

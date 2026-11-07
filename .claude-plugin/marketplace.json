@@ -2,7 +2,7 @@
   "name": "xstack",
   "description": "xstack: a Claude Code plugin for learning while you build with Claude.",
   "owner": {
-    "name": "ghostpants05"
+    "name": "CroixChadha"
   },
   "plugins": [
     {
