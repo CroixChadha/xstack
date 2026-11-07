@@ -1,0 +1,6 @@
+{
+  "_readme": "Used by the xstack safety hook. Hostnames and file names only. NEVER put passwords, keys, or connection strings here.",
+  "prod_hosts": [],
+  "prod_env_files": [".env.production", ".env.prod", ".env.production.local"],
+  "protected_branches": ["main", "master"]
+}
