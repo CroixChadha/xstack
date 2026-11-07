@@ -11,8 +11,13 @@ One line.
 Look for `TODO(xstack)` comments.
 
 ## Map
-```
-[caller: fn()] --> [file: your_fn()]  <- YOU --> [callee: fn()]
+```mermaid
+flowchart LR
+  caller["caller: fn()"] --> mine["file: your_fn()"]
+  mine --> callee["callee: fn()"]
+  class mine you
+
+  classDef you fill:#e3f2fd,stroke:#1565c0,stroke-width:3px,color:#111
 ```
 
 ## Inputs / outputs

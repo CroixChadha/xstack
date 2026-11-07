@@ -17,7 +17,7 @@ agentic coding while still building real skills: reading code, tracing data, and
 |---|---|
 | `/xstack:onboard` | Setup, competency check, project rundown |
 | `/xstack:new-project` | Deep planning for a new project |
-| `/xstack:map-the-flow` | ASCII map of how a feature connects |
+| `/xstack:map-the-flow` | Mermaid map of how a feature connects |
 | `/xstack:leaf-task` | A small piece of code for you to write, with spec and hints |
 | `/xstack:error-detective` | Debugging with a 4-level hint ladder |
 | `/xstack:explain-it-back` | Explain or predict code to check understanding |
@@ -41,7 +41,7 @@ Requires [Claude Code](https://docs.claude.com/en/docs/claude-code) and Python 3
 VS Code or Cursor extension.
 
 ```
-claude plugin marketplace add ghostpants05/xstack
+claude plugin marketplace add CroixChadha/xstack
 claude plugin install xstack@xstack
 ```
 
@@ -76,7 +76,7 @@ All read-only, and xstack always asks before launching them.
 
 ## Status
 
-v0.1.0, actively evolving. See [CHANGELOG.md](CHANGELOG.md).
+v0.2.0, actively evolving. See [CHANGELOG.md](CHANGELOG.md).
 
 ## License
 

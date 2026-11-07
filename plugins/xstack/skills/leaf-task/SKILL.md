@@ -23,7 +23,7 @@ Ask all of these in a single AskUserQuestion call:
 
 ## Step 3: Map
 Run xstack:map-the-flow for this piece (it skips its own "who explains" question, you already asked).
-Highlight the piece with `<- YOU` instead of `<- leaf`.
+Mark the user's piece with the `you` class instead of `leaf` (and `(YOU)` in the chat line).
 
 ## Step 4: Write the spec file
 Create `docs/xstack/features/<feature>/leaf-tasks/<task-slug>.md` from `${CLAUDE_PLUGIN_ROOT}/templates/leaf-task.md`:
@@ -31,7 +31,7 @@ Create `docs/xstack/features/<feature>/leaf-tasks/<task-slug>.md` from `${CLAUDE
 - **Goal:** one line
 - **Where:** file, function name first, approximate lines second (`api.py`, `create_card()`, around lines 52 to 80).
   Why: line numbers drift as code changes, function names do not.
-- **Map:** the small ASCII map, what calls in and what it calls out
+- **Map:** a tiny Mermaid map (max 5 nodes): what calls in, the `you` node, what it calls out
 - **Inputs / outputs:** types and examples
 - **Spec checklist:** what "done" means, as checkboxes
 - **Hints:** 2 to 4 light nudges. Never the answer.
