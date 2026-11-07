@@ -1,0 +1,15 @@
+{
+  "name": "xstack",
+  "description": "xstack: a Claude Code plugin for learning while you build with Claude.",
+  "owner": {
+    "name": "ghostpants05"
+  },
+  "plugins": [
+    {
+      "name": "xstack",
+      "source": "./plugins/xstack",
+      "description": "Learn while you build: maps, leaf tasks, a debugging hint ladder, and read-only codebase mapping agents for pair coding with Claude.",
+      "version": "0.2.0"
+    }
+  ]
+}

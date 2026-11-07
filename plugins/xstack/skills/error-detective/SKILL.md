@@ -18,7 +18,12 @@ Do not ask intake questions yet. You may read code silently to understand the bu
 Create a bug entry in `docs/xstack/features/<feature>/bugs.md` (or `features/_general/bugs.md` if it belongs to no feature),
 from `${CLAUDE_PLUGIN_ROOT}/templates/bugs.md`. Fill **Symptom** now.
 
-Draw a bug map with xstack:map-the-flow (bug type): only the `✗ error shows here` marker. No cause marker.
+Draw a bug map with xstack:map-the-flow (bug type): only the `err` class, on the node where the error surfaced.
+No `cause` class. Save it in the bug entry as **Bug map (as found)**.
+In chat, show the one-line path with `✗` on the error node:
+```
+CardForm.tsx → cards.py: create_card() ✗
+```
 Why: where an error shows up and where it is caused are often different places. Seeing that gap is the lesson.
 
 Then give Level 1.
@@ -52,11 +57,12 @@ Unlock only when the user explains, in their own words:
 2. **Why** it happened
 3. **How** they tracked it down
 If partly right: say what they got right first, then what is still missing, without revealing it. Let them try again.
-When they pass: reprint the bug map with the cause marked, so before and after sit side by side:
+When they pass: add **Bug map (as solved)** to the bug entry: the same map plus the `cause` class on the node
+where the cause started (add that node if it was not on the map). In chat, show both paths so before and after sit
+side by side:
 ```
-[CardForm.tsx] --POST--> [cards.py: create_card()]   ✗ error showed here
-                                |
-                          [db.py: insert_card()]      ● cause started here
+As found:  CardForm.tsx → cards.py: create_card() ✗
+As solved: CardForm.tsx → cards.py: create_card() ✗ → db.py: insert_card() ●
 ```
 Then a short card: **Cause:** / **Why:** / **Fix direction:**
 

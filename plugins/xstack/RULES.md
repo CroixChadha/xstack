@@ -10,7 +10,7 @@ Every decision gets a short "Why:" line. The user is learning the reasoning, not
 Anything shown to the user mid-session is a card:
 - About 10 lines max
 - **Bold labels**, small bullets, no paragraphs
-- One ASCII map when a map helps
+- One map line when a map helps (see section 13)
 - End with the one thing you need from the user (approve, answer, choose)
 - If the user says "more", expand that card. Depth is opt-in.
 
@@ -81,8 +81,28 @@ Feature folder names are short kebab-case slugs, like `card-due-dates`.
 
 ## 13. Map styles
 - System map and data map: Mermaid (opened in the editor)
-- Feature maps and chat maps: ASCII (render anywhere)
-- Box labels: `file: function()` only
+- Feature, leaf, and bug maps: small Mermaid maps, saved in the feature's files
+  - `flowchart LR`, max 8 nodes. Bigger flows get two maps in the same file: **Overview** (main path) and
+    **Zoom** (the part being worked on). Never one giant map.
+  - Node label: `file: function()` only, in quotes. UI files like `"CardForm.tsx"` are fine. Tables use `[( )]`.
+  - Short node ids (`form`, `create`, `insert`). Edge labels only for routes or events (`POST /api/cards`).
+  - No subgraphs, no extra styling. Markers are classes, using this classDef block exactly:
+    ```
+    classDef leaf fill:#e6f4ea,stroke:#2e7d32,color:#111
+    classDef you fill:#e3f2fd,stroke:#1565c0,stroke-width:3px,color:#111
+    classDef err fill:#fdecea,stroke:#c62828,stroke-width:2px,color:#111
+    classDef cause fill:#fff4e5,stroke:#ef6c00,stroke-width:2px,stroke-dasharray:4,color:#111
+    classDef planned stroke-dasharray:5
+    ```
+    (`color:#111` keeps text readable on light fills in dark theme)
+- Chat: never paste Mermaid. Show a one-line path, then where to open it:
+  ```
+  CardForm.tsx → cards.py: create_card() → db.py: insert_card() (leaf) → cards table
+  Open docs/xstack/features/<feature>/flow-map.md, Ctrl+Shift+V (Cmd+Shift+V on Mac) to preview.
+  ```
+  Chat markers: `(leaf)`, `(YOU)`, `✗` for err, `●` for cause, `(planned)`.
+  Why: Mermaid renders cleanly in the editor preview but not in the terminal.
+- Data views (xstack:data-view) and Captain checkpoint sketches stay ASCII.
 
 ## 14. Doc style (discovery and maps)
 Every discovery doc has two layers:
